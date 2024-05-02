@@ -12,6 +12,9 @@ body {
 }
 
 main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
     padding: 30px;
 }
 
@@ -24,9 +27,45 @@ section {
 }
 
 /* Styling Assessment Cards within the test area */
-.row div {
-    background-color: #aed6fc;
+.tests {
+    background-color: #ffffff;
     margin: 10px;
     padding: 20px;
+    border: 2px solid #aed6fc;
     border-radius: 10px;
+}
+
+.tests>img {
+    max-width: 30%;
+    height: auto;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-image img {
+    height: auto;
+}
+
+.hero-text>p {
+    font-size: 20px;
+}
+
+.test1-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #aed6fc;
+    border-radius: 10px;
+}
+
+.test1-image img {
+    max-width: 50%;
+    height: auto;
 }
