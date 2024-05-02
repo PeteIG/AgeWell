@@ -46,53 +46,73 @@
     <main>
         <!-- This main section contains an introduction to the Age Well tool, and a hero image -->
         <section>
-            <!-- Brief introduction to the tool and how to use it -->
-            <div>
-                <h1></h1>
-                <p>
+            <div class="hero-container">
+                <!-- Brief introduction to the tool and how to use it -->
+                <div class="hero-text">
+                    <h1>Stay Strong and Independent</h1>
+                    <p>Take a few minutes to check in with your physical well-being. These simple assessments can help
+                        you
+                        understand if there are areas where you might benefit from extra support to maintain your
+                        independence.</p>
+                </div>
 
-                </p>
-            </div>
-            <!-- Hero image -->
-            <div>
-                <img src="assets/images/age-well-hero.svg" loading="lazy" alt="Image of ageing person"
-                    class="img-fluid">
+                <!-- Hero image -->
+                <div class="hero-image">
+                    <img src="assets/images/test.png" loading="lazy" alt="Image of an online questionnaire"
+                        class="img-fluid">
+                </div>
             </div>
         </section>
         <!-- This is the test area which includes all three assessments -->
         <section>
-            <div class="row">
+            <div class="test1-container">
                 <!--First test-->
-                <div>
-                    <h2>Gait Speed Test</h2>
-                    <input type="number" id="gait-input" placeholder="Enter time (seconds)">
-                    <button id="gait-btn">Submit</button>
-                </div>
-                <!--Second test-->
-                <div>
+                <div class="prisma">
                     <h2>PRISMA 7 Questionnaire</h2>
                     <p>1. In general, do you have any health problems that require you to limit your activities?</p>
                     <input type="radio" name="prisma-1" value="yes"> Yes
-                    <input type="radio" name="prisma-1" value="no"> No <br>
+                    <input type="radio" name="prisma-1" value="no"> No
                     <p>2. Do you need someone to help you on a regular basis?</p>
                     <input type="radio" name="prisma-2" value="yes"> Yes
-                    <input type="radio" name="prisma-2" value="no"> No <br>
+                    <input type="radio" name="prisma-2" value="no"> No
                     <p>3. In general, do you have any health problems that require you to stay at home?</p>
                     <input type="radio" name="prisma-3" value="yes"> Yes
-                    <input type="radio" name="prisma-3" value="no"> No <br>
+                    <input type="radio" name="prisma-3" value="no"> No
                     <p>4. In case of need, can you count on someone close to you?</p>
                     <input type="radio" name="prisma-4" value="yes"> Yes
-                    <input type="radio" name="prisma-4" value="no"> No <br>
+                    <input type="radio" name="prisma-4" value="no"> No
                     <p>5. Do you regularly use a stick, walker, or wheelchair to get about?</p>
                     <input type="radio" name="prisma-5" value="yes"> Yes
-                    <input type="radio" name="prisma-5" value="no"> No <br>
+                    <input type="radio" name="prisma-5" value="no"> No
                     <button id="prisma-btn">Submit</button>
                 </div>
+                <div class="test1-image">
+                    <img src="assets/images/quiz.png" loading="lazy" alt="Image of a quiz" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <!--Second test-->
+                <div class="tests">
+                    <div class="test2-image">
+                        <img src="assets/images/walk.png" loading="lazy" alt="Image of person walking"
+                            class="img-fluid">
+                    </div>
+                    <div>
+                        <h2>Gait Speed Test</h2>
+                        <input type="number" id="gait-input" placeholder="Enter time (seconds)">
+                        <button id="gait-btn">Submit</button>
+                    </div>
+                </div>
                 <!--Third test-->
-                <div>
-                    <h2>Timed-Up-and-Go (TUG)</h2>
-                    <input type="number" id="tug-input" placeholder="Enter time (seconds)">
-                    <button id="tug-btn">Submit</button>
+                <div class="tests">
+                    <div class="test2-image">
+                        <img src="assets/images/time.png" loading="lazy" alt="Image of clock" class="img-fluid">
+                    </div>
+                    <div>
+                        <h2>Timed-Up-and-Go (TUG)</h2>
+                        <input type="number" id="tug-input" placeholder="Enter time (seconds)">
+                        <button id="tug-btn">Submit</button>
+                    </div>
                 </div>
             </div>
             <!-- Test results -->
