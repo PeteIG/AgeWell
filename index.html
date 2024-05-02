@@ -65,14 +65,34 @@
                 <!--First test-->
                 <div>
                     <h2>Gait Speed Test</h2>
+                    <input type="number" id="gait-input" placeholder="Enter time (seconds)">
+                    <button id="gait-btn">Submit</button>
                 </div>
                 <!--Second test-->
                 <div>
                     <h2>PRISMA 7 Questionnaire</h2>
+                    <p>1. In general, do you have any health problems that require you to limit your activities?</p>
+                    <input type="radio" name="prisma-1" value="yes"> Yes
+                    <input type="radio" name="prisma-1" value="no"> No <br>
+                    <p>2. Do you need someone to help you on a regular basis?</p>
+                    <input type="radio" name="prisma-2" value="yes"> Yes
+                    <input type="radio" name="prisma-2" value="no"> No <br>
+                    <p>3. In general, do you have any health problems that require you to stay at home?</p>
+                    <input type="radio" name="prisma-3" value="yes"> Yes
+                    <input type="radio" name="prisma-3" value="no"> No <br>
+                    <p>4. In case of need, can you count on someone close to you?</p>
+                    <input type="radio" name="prisma-4" value="yes"> Yes
+                    <input type="radio" name="prisma-4" value="no"> No <br>
+                    <p>5. Do you regularly use a stick, walker, or wheelchair to get about?</p>
+                    <input type="radio" name="prisma-5" value="yes"> Yes
+                    <input type="radio" name="prisma-5" value="no"> No <br>
+                    <button id="prisma-btn">Submit</button>
                 </div>
                 <!--Third test-->
                 <div>
                     <h2>Timed-Up-and-Go (TUG)</h2>
+                    <input type="number" id="tug-input" placeholder="Enter time (seconds)">
+                    <button id="tug-btn">Submit</button>
                 </div>
             </div>
             <!-- Test results -->
