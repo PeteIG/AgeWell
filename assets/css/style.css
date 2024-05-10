@@ -6,7 +6,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Page backgorund colour */
+/* Page background colour */
 body {
     background-color: #f0f0f0;
 }
@@ -16,6 +16,11 @@ main {
     margin: 0 auto;
     background-color: #ffffff;
     padding: 30px;
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 0;
 }
 
 /* Adding visual separation with white background */
@@ -28,30 +33,16 @@ section {
 
 /* Styling Assessment Cards within the test area */
 .tests {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #ffffff;
     margin: 10px;
     padding: 20px;
     border: 2px solid #aed6fc;
     border-radius: 10px;
-}
-
-.tests>img {
-    max-width: 30%;
-    height: auto;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.hero-image img {
-    height: auto;
-}
-
-.hero-text>p {
-    font-size: 20px;
+    flex: 1 1 40%;
 }
 
 .test1-container {
@@ -65,7 +56,36 @@ section {
     border-radius: 10px;
 }
 
-.test1-image img {
-    max-width: 50%;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+/* Image Styling */
+.tests img {
+    max-width: 70%;
     height: auto;
+}
+
+.test1-image img {
+    max-height: 100%;
+    max-width: 60%;
+    height: auto;
+}
+
+/* Hero Section */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-image img {
+    height: auto;
+}
+
+.hero-text p {
+    font-size: 20px;
 }
