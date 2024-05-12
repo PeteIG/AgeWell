@@ -15,9 +15,8 @@ const prismaAnswers = {
 
 // Function to get all values
 function getValues() {
-    userDob = document.getElementById("dob").value;
+    userAge = document.getElementById("age-range").value;
     userGender = document.getElementById("gender").value;
-
 
     prismaQuestions.forEach(question => {
         const radios = document.getElementsByName(question);
@@ -34,7 +33,7 @@ function getValues() {
     userTug = document.getElementById("tug-input").value;
 
     //Console Logging
-    console.log(userDob);
+    console.log(userAge);
     console.log(userGender);
     console.log(prismaAnswers);
     console.log(userGaitSpeed);

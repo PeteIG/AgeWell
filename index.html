@@ -63,11 +63,17 @@
                 </div>
             </div>
         </section>
-        <!-- This is the area which will capture the age and date of birth which applies to all tests -->
+        <!-- This is the area which will capture the age and gender which applies to all tests -->
         <section>
             <div>
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob">
+                <label for="age-range">Age:</label>
+                <select id="age-range">
+                    <option value="under50">Under 50</option>
+                    <option value="50-64">50-64</option>
+                    <option value="65-74">65-74</option>
+                    <option value="75-84">75-84</option>
+                    <option value="85-plus">85+</option>
+                </select>
             </div>
             <div>
                 <label for="gender">Gender</label>
