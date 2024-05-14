@@ -1,6 +1,6 @@
 //Getting the values
 //Global values (initialised)
-let userDob = "";
+let userAge = "";
 let userGender = "";
 let userGaitSpeed = "";
 let userTug = "";
@@ -17,7 +17,6 @@ const prismaAnswers = {
 function getValues() {
     userAge = document.getElementById("age-range").value;
     userGender = document.getElementById("gender").value;
-
     prismaQuestions.forEach(question => {
         const radios = document.getElementsByName(question);
         radios.forEach(radio => {
@@ -27,10 +26,19 @@ function getValues() {
         });
     });
 
-    //Gait Speed
+    //Gait Speed validation  - Resets to empty if invalid
     userGaitSpeed = document.getElementById("gait-input").value;
-    //TuG
+    if (userGaitSpeed === "" || isNaN(userGaitSpeed) || userGaitSpeed <= 0) {
+        userGaitSpeed = "";
+        alert("Please enter a valid positive number for gait speed.");
+    }
+
+    //TuG validation - Resets to empty if invalid
     userTug = document.getElementById("tug-input").value;
+    if (userTug === "" || isNaN(userTug) || userTug <= 0) {
+        userTug = "";
+        alert("Please enter a valid positive number for Timed Up and Go.");
+    }
 
     //Console Logging
     console.log(userAge);
@@ -40,5 +48,11 @@ function getValues() {
     console.log(userTug);
 }
 
-//Event listener for submit button
-document.getElementById("submit-btn").addEventListener("click", getValues);
+// Export variables and functions for testing
+module.exports = {
+    userAge,
+    userGender,
+    userGaitSpeed,
+    userTug,
+    getValues
+};
