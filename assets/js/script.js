@@ -40,6 +40,20 @@ function getValues() {
         alert("Please enter a valid positive number for Timed Up and Go.");
     }
 
+    //Age validation - Resets to empty if invalid
+    userAge = document.getElementById("age-range").value;
+    if (userAge === "") {
+        userAge = "";
+        alert("Age range is needed to accurately categorise your results. Please select an option.");
+    }
+
+    //Gender validation - Resets to empty if invalid
+    userGender = document.getElementById("gender").value;
+    if (userGender === "") {
+        userGender = "";
+        alert("Gender is needed to accurately categorise your results. Please select an option.");
+    }
+
     //Console Logging
     console.log(userAge);
     console.log(userGender);
@@ -54,5 +68,7 @@ module.exports = {
     userGender,
     userGaitSpeed,
     userTug,
+    prismaQuestions,
+    prismaAnswers,
     getValues
 };
