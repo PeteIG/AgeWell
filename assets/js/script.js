@@ -62,13 +62,29 @@ function getValues() {
     console.log(userTug);
 }
 
-// Export variables and functions for testing
-module.exports = {
-    userAge,
-    userGender,
-    userGaitSpeed,
-    userTug,
-    prismaQuestions,
-    prismaAnswers,
-    getValues
-};
+//Calculate risk category based on 10 second BGS cutoff 
+function calculateTugScore(userTug) {
+    if (userTug > 10) {
+        return "Potential Risk of Frailty";
+    } else {
+        return "Low Risk of Frailty";
+    }
+}
+
+// Event Listener for the "Submit All" button
+document.getElementById("submit-btn").addEventListener("click", () => {
+            getValues();
+
+            const tugResult = calculateTugScore(userTug);
+        }
+
+        // Export variables and functions for testing
+        module.exports = {
+            userAge,
+            userGender,
+            userGaitSpeed,
+            userTug,
+            prismaQuestions,
+            prismaAnswers,
+            getValues
+        };
