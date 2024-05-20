@@ -62,7 +62,7 @@ function getValues() {
     console.log(userTug);
 }
 
-//Calculate risk category based on 10 second BGS cutoff 
+//Calculate TuG risk category based on 10 second BGS cutoff 
 function calculateTugScore(userTug) {
     if (userTug > 10) {
         return "Potential Risk of Frailty";
@@ -71,20 +71,48 @@ function calculateTugScore(userTug) {
     }
 }
 
+//Calculate Gait Speed risk category based on 5 second BGS cutoff 
+function calculateGaitResult(userGaitSpeed) {
+    if (userGaitSpeed > 5) {
+        return "Potential Risk of Frailty";
+    } else {
+        return "Low Risk of Frailty";
+    }
+}
+
 // Event Listener for the "Submit All" button
 document.getElementById("submit-btn").addEventListener("click", () => {
-            getValues();
+    getValues();
 
-            const tugResult = calculateTugScore(userTug);
+    function calculateOverallRisk(tugResult, gaitResult) {
+        if (tugResult === "Potential Risk of Frailty" || gaitResult === "Potential Risk of Frailty") {
+            return "Potential Risk of Frailty";
+        } else {
+            return "Low Risk of Frailty";
         }
+    }
 
-        // Export variables and functions for testing
-        module.exports = {
-            userAge,
-            userGender,
-            userGaitSpeed,
-            userTug,
-            prismaQuestions,
-            prismaAnswers,
-            getValues
-        };
+    // Calculating the risk scores
+    const tugResult = calculateTugScore(userTug);
+    const gaitResult = calculateGaitResult(userGaitSpeed);
+    const overallResult = calculateOverallRisk(tugResult, gaitResult);
+
+    //Display risk scores
+    document.getElementById("tug-result").textContent = `TuG Risk Result: ${tugResult}`;
+    document.getElementById("gait-result").textContent = `Gait Speed Risk Result: ${gaitResult}`;
+    document.getElementById("overall-result").textContent = `Overall Risk Result: ${gaitResult}`;
+});
+
+
+
+
+// Export variables and functions for testing
+module.exports = {
+    userAge,
+    userGender,
+    userGaitSpeed,
+    userTug,
+    prismaQuestions,
+    prismaAnswers,
+    getValues
+};
