@@ -76,15 +76,6 @@ function getValues() {
         userGender = "";
         showModal();
     }
-
-    //Prisma validation - 
-
-    //Console Logging
-    console.log(userAge);
-    console.log(userGender);
-    console.log(prismaAnswers);
-    console.log(userGaitSpeed);
-    console.log(userTug);
 }
 
 /* Calculate TuG risk category based on 10 second BGS cutoff */
