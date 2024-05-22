@@ -128,14 +128,14 @@ Wireframes were created using [Moqups]. Screenshots show the layout for desktop,
 
 #### Desktop
 
-- [Home Page. Desktop Screen](docs/agewell_desktop.png)
+![Home Page. Desktop Screen](docs/agewell_desktop.png)
 
 #### Tablets
 
-- [Home Page. Tablet Screen](docs/agewell_tablet.png)
+![Home Page. Tablet Screen](docs/agewell_tablet.png)
 
 #### Mobile devices
-- [Home Page. Mobile Screen](docs/agewell_mobile.png)
+![Home Page. Mobile Screen](docs/agewell_mobile.png)
 
 ## Testing
 
