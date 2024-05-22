@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 //Getting the values
 //Global values (initialised)
 let userAge = "";
