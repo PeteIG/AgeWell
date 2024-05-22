@@ -77,6 +77,8 @@ function getValues() {
         showModal();
     }
 
+    //Prisma validation - 
+
     //Console Logging
     console.log(userAge);
     console.log(userGender);
@@ -88,31 +90,50 @@ function getValues() {
 /* Calculate TuG risk category based on 10 second BGS cutoff */
 function calculateTugScore(userTug) {
     if (userTug > 10) {
-        return "Potential Risk of Frailty";
+        return true;
     } else {
-        return "Low Risk of Frailty";
+        return false;
     }
 }
 
 /* Calculate Gait Speed risk category based on 5 second BGS cutoff */
 function calculateGaitResult(userGaitSpeed) {
     if (userGaitSpeed > 5) {
-        return "Potential Risk of Frailty";
+        return true;
     } else {
-        return "Low Risk of Frailty";
+        return false;
     }
+}
+
+/* Calculate Prisma risk category based on <3 yes answers */
+function calculatePrismaScore(prismaAnswers, userAge, userGender) {
+    let prismaScore = 0;
+
+    // Adding age and gender to the PRISMA score calculation
+    if (userAge === "85-plus") prismaScore++;
+    if (userGender === "male") prismaScore++;
+
+    // Calculate score based on PRISMA answers
+    for (const question in prismaAnswers) {
+        if (prismaAnswers[question] === "yes") {
+            prismaScore++;
+        }
+    }
+    return prismaScore;
 }
 
 
 /* Function to count the number of valid assessments, then display the results section if at least 2 valid assessments have been completed, or display a modal warning if this criteria has not been met */
-function showResults() {
+function showResults(prismaScore, overallResult) {
     let validAssessments = 0;
     if (userGaitSpeed !== "") validAssessments++;
     if (userTug !== "") validAssessments++;
+    if (prismaScore > 0) validAssessments++;
 
     if (validAssessments >= 2) {
         document.getElementById("results").style.display = "block";
         document.getElementById("submit-btn").style.display = "none";
+        document.getElementById("overall-result").textContent = `Overall Risk Result: ${overallResult}`;
     } else {
         showModal();
     }
@@ -122,28 +143,34 @@ function showResults() {
 document.getElementById("submit-btn").addEventListener("click", () => {
     getValues();
 
+    // Storing the risk scores
+    const tugResult = calculateTugScore(userTug);
+    const gaitResult = calculateGaitResult(userGaitSpeed);
+    const prismaScore = calculatePrismaScore(prismaAnswers, userAge, userGender);
+
     /*Function to calculate overall risk of frailty from the 2 or 3 assessments completed */
-    function calculateOverallRisk(tugResult, gaitResult) {
-        if (tugResult === "Potential Risk of Frailty" || gaitResult === "Potential Risk of Frailty") {
-            return "Potential Risk of Frailty";
-        } else {
+    function evaluateOverallRisk(tugResult, gaitResult, prismaScore) {
+        let riskCount = 0;
+
+        if (tugResult === true) riskCount++;
+        if (gaitResult === true) riskCount++;
+        if (prismaScore > 3) riskCount++;
+
+        if (riskCount === 0) {
             return "Low Risk of Frailty";
+        } else if (riskCount === 1) {
+            return "Medium Risk of Frailty";
+        } else if (riskCount === 2) {
+            return "High Risk of Frailty";
+        } else {
+            return "Very High Risk of Frailty";
         }
     }
 
-    // Calculating the risk scores
-    const tugResult = calculateTugScore(userTug);
-    const gaitResult = calculateGaitResult(userGaitSpeed);
-    const overallResult = calculateOverallRisk(tugResult, gaitResult);
+    const overallResult = evaluateOverallRisk(tugResult, gaitResult, prismaScore);
 
     // Display results section
-    showResults();
-
-    //Display risk scores
-    document.getElementById("tug-result").textContent = `TuG Risk Result: ${tugResult}`;
-    document.getElementById("gait-result").textContent = `Gait Speed Risk Result: ${gaitResult}`;
-    document.getElementById("overall-result").textContent = `Overall Risk Result: ${gaitResult}`;
-
+    showResults(prismaScore, overallResult);
 });
 
 /* Function to refresh the page */
