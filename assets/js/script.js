@@ -53,28 +53,28 @@ function getValues() {
     userGaitSpeed = document.getElementById("gait-input").value;
     if (userGaitSpeed === "" || isNaN(userGaitSpeed) || userGaitSpeed <= 0) {
         userGaitSpeed = "";
-        alert("Please enter a valid positive number for gait speed.");
+        showModal();
     }
 
     //TuG validation - Resets to empty if invalid
     userTug = document.getElementById("tug-input").value;
     if (userTug === "" || isNaN(userTug) || userTug <= 0) {
         userTug = "";
-        alert("Please enter a valid positive number for Timed Up and Go.");
+        showModal();
     }
 
     //Age validation - Resets to empty if invalid
     userAge = document.getElementById("age-range").value;
     if (userAge === "") {
         userAge = "";
-        alert("Age range is needed to accurately categorise your results. Please select an option.");
+        showModal();
     }
 
     //Gender validation - Resets to empty if invalid
     userGender = document.getElementById("gender").value;
     if (userGender === "") {
         userGender = "";
-        alert("Gender is needed to accurately categorise your results. Please select an option.");
+        showModal();
     }
 
     //Console Logging
@@ -114,7 +114,7 @@ function showResults() {
         document.getElementById("results").style.display = "block";
         document.getElementById("submit-btn").style.display = "none";
     } else {
-        alert("Please complete at least two of the assessments.");
+        showModal();
     }
 }
 
@@ -154,6 +154,11 @@ function refreshPage() {
 
 // Event Listener for the Reset button
 document.getElementById("reset-btn").addEventListener("click", refreshPage);
+
+/* Function to display a global alert modal if required inputs are not provided */
+function showModal() {
+    $('#alertModal').modal('show');
+}
 
 // Export variables and functions for testing
 module.exports = {
