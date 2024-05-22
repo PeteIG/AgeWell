@@ -23,12 +23,12 @@ The website was checked using DevTools across various devices and screen sizes.
 ---
 
 ## User Stories
-- As an ageing adult, I want to assess my frailty risk, so that I can take proactive steps to maintain my independence.
-* Met by: Clear instructions and validated assessments available on the homepage.
-- As a healthcare professional, I want to understand the frailty risk of my patients quickly, so that I can provide appropriate support and resources.
-* Met by: Concise risk evaluation and results section that summarises the frailty risk based on assessments.
-- As a caregiver, I want to know if my loved one is at risk of frailty, so that I can ensure they get the help they need.
-* Met by: User-friendly interface with clear results and recommendations after completing the assessments.
+As an ageing adult, I want to assess my frailty risk, so that I can take proactive steps to maintain my independence.
+- Met by: Clear instructions and validated assessments available on the homepage.
+As a healthcare professional, I want to understand the frailty risk of my patients quickly, so that I can provide appropriate support and resources.
+- Met by: Concise risk evaluation and results section that summarises the frailty risk based on assessments.
+As a caregiver, I want to know if my loved one is at risk of frailty, so that I can ensure they get the help they need.
+- Met by: User-friendly interface with clear results and recommendations after completing the assessments.
 
 ---
 
@@ -94,16 +94,16 @@ Using Lighthouse in DevTools, it was......
 
 ## Bugs
 ### Solved Bugs
-- Issue: The submit button would not work if the user did not complete all required fields.
-* Resolved: Added alerts to notify the user if they did not enter valid inputs
+Issue: The submit button would not work if the user did not complete all required fields.
+- Resolved: Added alerts to notify the user if they did not enter valid inputs
 
-- Issue: The volume of alerts did not make for a good user experience if several inputs had not been validated.
+Issue: The volume of alerts did not make for a good user experience if several inputs had not been validated.
 - Resolved: Added a modal that alerts the user to fill in all required fields before submission and removed seperate alerts.
 
-- Issue: The user needed a reset button if they wanted to complete the assessments again. The button required all inputs to be reset, hidden areas to be shown, visible areas to again be hidden. 
+Issue: The user needed a reset button if they wanted to complete the assessments again. The button required all inputs to be reset, hidden areas to be shown, visible areas to again be hidden. 
 - Resolved: There appeared to be no reason not to simplify the code by reloading the page and sending the user back to the top of the page. This is the solution which was implemented.
 
-- Issue: The Gait Speed and TUG input fields were accepting non-numeric values.
+Issue: The Gait Speed and TUG input fields were accepting non-numeric values.
 - Resolved: Implemented input validation and min and max values to ensure only numeric values are accepted.
 
 ### Unsolved Bugs
