@@ -31,6 +31,7 @@ button {
     background-color: rgb(40, 37, 37);
     color: white;
     padding: 15px;
+    margin: 10px;
     border-radius: 10px;
     font-size: 18px;
 }
