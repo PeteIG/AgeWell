@@ -23,7 +23,9 @@ window.onscroll = function () {
     scrollFunction()
 };
 
-/* Function to switch the results section from hidden to block when assessments have been completed */
+/** 
+ *Function to switch the results section from hidden to block when assessments have been completed 
+ */
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
@@ -32,13 +34,17 @@ function scrollFunction() {
     }
 }
 
-/* Function to scroll to the top of the document when the user clicks on the button */
+/** 
+ * Function to scroll to the top of the document when the user clicks on the button 
+ * */
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-/* Function to get all values */
+/** 
+ *Function to get all values 
+ */
 function getValues() {
     userAge = document.getElementById("age-range").value;
     userGender = document.getElementById("gender").value;
@@ -80,7 +86,9 @@ function getValues() {
     }
 }
 
-/* Calculate TuG risk category based on 10 second BGS cutoff */
+/** 
+ * Function to calculate TuG risk category based on 10 second BGS cutoff 
+ */
 function calculateTugScore(userTug) {
     if (userTug > 10) {
         return true;
@@ -89,7 +97,9 @@ function calculateTugScore(userTug) {
     }
 }
 
-/* Calculate Gait Speed risk category based on 5 second BGS cutoff */
+/** 
+ * Function to calculate Gait Speed risk category based on 5 second BGS cutoff 
+ */
 function calculateGaitResult(userGaitSpeed) {
     if (userGaitSpeed > 5) {
         return true;
@@ -98,7 +108,9 @@ function calculateGaitResult(userGaitSpeed) {
     }
 }
 
-/* Calculate Prisma risk category based on <3 yes answers */
+/**
+ * Function to calculate Prisma risk category based on <3 yes answers 
+ */
 function calculatePrismaScore(prismaAnswers, userAge, userGender) {
     let prismaScore = 0;
 
@@ -115,8 +127,9 @@ function calculatePrismaScore(prismaAnswers, userAge, userGender) {
     return prismaScore;
 }
 
-
-/* Function to count the number of valid assessments, then display the results section if at least 2 valid assessments have been completed, or display a modal warning if this criteria has not been met */
+/** 
+ * Function to count the number of valid assessments, then display the results section if at least 2 valid assessments have been completed, or display a modal warning if this criteria has not been met 
+ */
 function showResults(prismaScore, overallResult) {
     let validAssessments = 0;
     if (userGaitSpeed !== "") validAssessments++;
@@ -141,7 +154,9 @@ document.getElementById("submit-btn").addEventListener("click", () => {
     const gaitResult = calculateGaitResult(userGaitSpeed);
     const prismaScore = calculatePrismaScore(prismaAnswers, userAge, userGender);
 
-    /*Function to calculate overall risk of frailty from the 2 or 3 assessments completed */
+    /**
+     * Function to calculate overall risk of frailty from the 2 or 3 assessments completed 
+     */
     function evaluateOverallRisk(tugResult, gaitResult, prismaScore) {
         let riskCount = 0;
 
@@ -166,7 +181,9 @@ document.getElementById("submit-btn").addEventListener("click", () => {
     showResults(prismaScore, overallResult);
 });
 
-/* Function to refresh the page */
+/**
+ * Function to refresh the page 
+ */
 function refreshPage() {
     topFunction();
     location.reload();
@@ -175,7 +192,9 @@ function refreshPage() {
 // Event Listener for the Reset button
 document.getElementById("reset-btn").addEventListener("click", refreshPage);
 
-/* Function to display a global alert modal if required inputs are not provided */
+/** 
+ * Function to display a global alert modal if required inputs are not provided 
+ */
 function showModal() {
     $('#alertModal').modal('show');
 }
