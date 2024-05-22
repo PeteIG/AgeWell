@@ -169,6 +169,7 @@ In creating this website I relied heavily upon:
 - The requirements and research of my own company [Agile Kinetic](https://www.agilekinetic.com/)
 - For frailty assessment thresholds I relied upon the British Geriatrics Society (BGS) https://www.bgs.org.uk/ 
 - Documentation at https://getbootstrap.com/
+- Documentation at https://Jestjs.io 
 - Images from [Undraw](https://undraw.co/)
 - Troubleshooting at https://stackoverflow.com/
 - Troubleshooting at https://www.w3.org 
@@ -176,6 +177,7 @@ In creating this website I relied heavily upon:
 - For the Mockup generator on various screen sizes I used https://techsini.com/multi-mockup/index.php 
 - [Responsive Viewer](https://chromewebstore.google.com/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb) Chrome extension was used to visualise pages on various screen sizes
 - [GoFullPage](https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl) Chrome extension was used to capture full page screenshots of pages
+- I used https://tabletomarkdown.com/ to convert the manual testing table in my TESTING.md file from an MS Excel table
 
 ---
 
