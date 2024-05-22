@@ -130,3 +130,31 @@ section {
 .hero-text p {
     font-size: 20px;
 }
+
+/* For tablets (devices with screen width less than or equal to 768px) */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .tests {
+        flex: 100%;
+    }
+
+    .test1-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
