@@ -34,11 +34,11 @@
 
 <body>
     <!-- This is the website navbar and Age Well mock project logo -->
-    <header>
-        <nav>
-            <!-- Age Well mock project logo -->
-            <a>
-
+    <header class="sticky-top">
+        <nav class="navbar">
+            <!-- Personal logo -->
+            <a class="navbar-brand img-fluid" href="index.html" aria-label="Go to homepage">
+                <img src="assets/images/agewell.png" class="logo-img img-fluid" alt="AgeWell logo">
             </a>
         </nav>
     </header>
@@ -66,8 +66,13 @@
         <!-- This is the area which will capture the age and gender which applies to all tests -->
         <section>
             <div>
+                <p>In order for us to understand your mobility and physical well-being please complete at least two of
+                    the assessments below. How your responses are interpreted will depend upon your age and gender so
+                    please begin by entering these.</p>
+                <br>
                 <label for="age-range">Age:</label>
-                <select id="age-range">
+                <select id="age-range" required>
+                    <option value="" selected disabled>Please Select</option>
                     <option value="under50">Under 50</option>
                     <option value="50-64">50-64</option>
                     <option value="65-74">65-74</option>
@@ -77,7 +82,8 @@
             </div>
             <div>
                 <label for="gender">Gender</label>
-                <select id="gender">
+                <select id="gender" required>
+                    <option value="" selected disabled>Please Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
@@ -89,6 +95,9 @@
                 <!--First test-->
                 <div class="prisma">
                     <h2>PRISMA 7 Questionnaire</h2>
+                    <p>The following questionnaire is a simple and quick tool used to assess certain aspects of your
+                        health and daily living. It consists of straightforward questions that help us understand your
+                        mobility, social support, and overall well-being. Please select yes or no for each question</p>
                     <p>1. In general, do you have any health problems that require you to limit your activities?</p>
                     <input type="radio" name="prisma-1" value="yes"> Yes
                     <input type="radio" name="prisma-1" value="no"> No
@@ -117,7 +126,12 @@
                     </div>
                     <div>
                         <h2>Gait Speed Test</h2>
-                        <input type="number" id="gait-input" placeholder="Enter time (seconds)">
+                        <p>The Gait Speed Test is a simple assessment of functional mobility which can be administered
+                            by a Healthcare Professional. Please enter your latest Gait Speed Test time in the area
+                            below.</p>
+                        <br>
+                        <label for="gait-input">Enter time (seconds)</label>
+                        <input type="number" id="gait-input" placeholder="5" min="1" max="10">
                     </div>
                 </div>
                 <!--Third test-->
@@ -127,13 +141,22 @@
                     </div>
                     <div>
                         <h2>Timed-Up-and-Go (TUG)</h2>
-                        <input type="number" id="tug-input" placeholder="Enter time (seconds)">
+                        <p>The Timed Up and Go (TUG) test is a simple and effective way for clinicians to evaluate your
+                            mobility
+                            and balance. It helps clinicians to understand your risk of
+                            falling and your overall physical functioning.</p>
+                        <br>
+                        <label for="tug-input">Enter time (seconds)</label>
+                        <input type="number" id="tug-input" placeholder="10" min="1" max="30">
                     </div>
                 </div>
             </div>
-            <div>
-                <button id="submit-btn">Submit All</button>
-            </div>
+            <!-- Submit -->
+            <section>
+                <div>
+                    <button id="submit-btn">Submit All</button>
+                </div>
+            </section>
             <!-- Test results -->
             <div>
                 <h2>Results</h2>
