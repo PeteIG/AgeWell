@@ -23,6 +23,22 @@ p {
     margin-bottom: 0;
 }
 
+/* Styling the buttons */
+button {
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(40, 37, 37);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
 /* Styling the navbar */
 .navbar {
     width: 100%;
@@ -32,6 +48,14 @@ p {
 
 .logo-img {
     max-height: 60px;
+}
+
+/* Styling the return to top button in the navbar. Hidden by default */
+#myBtn {
+    display: none;
+    position: fixed;
+    /* Fixed/sticky position */
+    right: 40px;
 }
 
 /* Adding visual separation with white background */
@@ -74,11 +98,9 @@ section {
     justify-content: space-around;
 }
 
-/* Styling submit button */
-section.submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Hide results section by default */
+#results {
+    display: none;
 }
 
 /* Image Styling */

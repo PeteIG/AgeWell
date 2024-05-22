@@ -36,10 +36,12 @@
     <!-- This is the website navbar and Age Well mock project logo -->
     <header class="sticky-top">
         <nav class="navbar">
-            <!-- Personal logo -->
+            <!-- AgeWell logo -->
             <a class="navbar-brand img-fluid" href="index.html" aria-label="Go to homepage">
                 <img src="assets/images/agewell.png" class="logo-img img-fluid" alt="AgeWell logo">
             </a>
+            <!-- Scroll to top button -->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Return to top</button>
         </nav>
     </header>
 
@@ -158,17 +160,12 @@
                 </div>
             </section>
             <!-- Test results -->
-            <div>
+            <div id="results">
                 <h2>Results</h2>
                 <p id="tug-result"></p>
                 <p id="gait-result"></p>
                 <p id="overall-result"></p>
-            </div>
-        </section>
-        <!-- This section includes any recommendations or support -->
-        <section>
-            <div>
-
+                <button id="reset-btn">Reset</button>
             </div>
         </section>
     </main>
