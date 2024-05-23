@@ -83,6 +83,9 @@ Passing through the official W3C validator.
 Passing through the official W3C (Jigsaw) validator.
 CSS Validator
 
+### Javascript
+Passing through JSHint.
+
 ### Lighthouse Report
 Using Lighthouse in DevTools, it was very high performing on all measures
 ![Lighthouse Report](docs/lighthouse.png)

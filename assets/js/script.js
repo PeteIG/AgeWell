@@ -14,9 +14,10 @@ const prismaAnswers = {
     "prisma-4": "no",
     "prisma-5": "no",
 }
+let isValidInput = true; //variable to flag when alert modal is triggered and prevent results being shown
 
 // Get the scroll to top button:
-let mybutton = document.getElementById("myBtn");
+const mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
@@ -46,6 +47,7 @@ function topFunction() {
  *Function to get all values 
  */
 function getValues() {
+    isValidInput = true; // Flag is true at the start of the validation
     userAge = document.getElementById("age-range").value;
     userGender = document.getElementById("gender").value;
     prismaQuestions.forEach(question => {
@@ -149,37 +151,40 @@ function showResults(prismaScore, overallResult) {
 document.getElementById("submit-btn").addEventListener("click", () => {
     getValues();
 
-    // Storing the risk scores
-    const tugResult = calculateTugScore(userTug);
-    const gaitResult = calculateGaitResult(userGaitSpeed);
-    const prismaScore = calculatePrismaScore(prismaAnswers, userAge, userGender);
+    // Only calculate and show results if the modal flag has not been triggered
+    if (isValidInput) {
+        // Storing the risk scores
+        const tugResult = calculateTugScore(userTug);
+        const gaitResult = calculateGaitResult(userGaitSpeed);
+        const prismaScore = calculatePrismaScore(prismaAnswers, userAge, userGender);
 
-    /**
-     * Function to calculate overall risk of frailty from the 2 or 3 assessments completed 
-     */
-    function evaluateOverallRisk(tugResult, gaitResult, prismaScore) {
-        let riskCount = 0;
+        const overallResult = evaluateOverallRisk(tugResult, gaitResult, prismaScore);
 
-        if (tugResult === true) riskCount++;
-        if (gaitResult === true) riskCount++;
-        if (prismaScore > 3) riskCount++;
-
-        if (riskCount === 0) {
-            return "Low Risk of Frailty";
-        } else if (riskCount === 1) {
-            return "Medium Risk of Frailty";
-        } else if (riskCount === 2) {
-            return "High Risk of Frailty";
-        } else {
-            return "Very High Risk of Frailty";
-        }
+        // Display results section
+        showResults(prismaScore, overallResult);
     }
-
-    const overallResult = evaluateOverallRisk(tugResult, gaitResult, prismaScore);
-
-    // Display results section
-    showResults(prismaScore, overallResult);
 });
+
+/**
+ * Function to calculate overall risk of frailty from the 2 or 3 assessments completed 
+ */
+function evaluateOverallRisk(tugResult, gaitResult, prismaScore) {
+    let riskCount = 0;
+
+    if (tugResult === true) riskCount++;
+    if (gaitResult === true) riskCount++;
+    if (prismaScore > 3) riskCount++;
+
+    if (riskCount === 0) {
+        return "Low Risk of Frailty";
+    } else if (riskCount === 1) {
+        return "Medium Risk of Frailty";
+    } else if (riskCount === 2) {
+        return "High Risk of Frailty";
+    } else {
+        return "Very High Risk of Frailty";
+    }
+}
 
 /**
  * Function to refresh the page 
@@ -197,6 +202,7 @@ document.getElementById("reset-btn").addEventListener("click", refreshPage);
  */
 function showModal() {
     $('#alertModal').modal('show');
+    isValidInput = false; //If modal shown it triggers the flag
 }
 
 // Export variables and functions for testing
