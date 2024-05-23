@@ -4,21 +4,17 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
 The AgeWell website was tested on the following browsers: Chrome, Firefox, Edge, and Safari.
 
-#### Chrome:
-Chrome
+Prior to submission of responses
+![Desktop view](docs/agewell_desk.png)
+![Mobile view](docs/agewell_mob.png)
 
-#### Firefox:
-Firefox
-
-#### Edge:
-Edge
-
-#### Safari:
+Post response submission
+![Desktop view](docs/results_desk.png)
+![Mobile view](docs/results_mob.png)
 
 ## Responsiveness
 The website was checked using DevTools across various devices and screen sizes.
-
-### Main Page
+docs/all_devices.png
 
 ---
 
@@ -88,7 +84,8 @@ Passing through the official W3C (Jigsaw) validator.
 CSS Validator
 
 ### Lighthouse Report
-Using Lighthouse in DevTools, it was......
+Using Lighthouse in DevTools, it was very high performing on all measures
+![Lighthouse Report](docs/lighthouse.png)
 
 ---
 
