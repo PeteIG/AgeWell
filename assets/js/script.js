@@ -13,7 +13,7 @@ const prismaAnswers = {
     "prisma-3": "no",
     "prisma-4": "no",
     "prisma-5": "no",
-}
+};
 let isValidInput = true; //variable to flag when alert modal is triggered and prevent results being shown
 
 // Get the scroll to top button:
@@ -21,7 +21,7 @@ const mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
-    scrollFunction()
+    scrollFunction();
 };
 
 /** 
