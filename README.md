@@ -93,6 +93,7 @@ It offers:
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): Served as the fundamental building block for the site's structure.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS): Employed for styling and designing the site's layout.
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): For interactive features and form validations.
+- [Jest](https://jestjs.io/): Used for unit testing to ensure the functionality and reliability of the JavaScript code.
 - [Bootstrap](https://getbootstrap.com/): Enabled fast, responsive design with a suite of ready-to-use components and utilities for layout and styling.
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox): Utilised for symmetrically organising elements across various pages.
 - [Moqups](https://moqups.com/): Leveraged for creating initial wireframes of the website.
@@ -169,7 +170,7 @@ In creating this website I relied heavily upon:
 - The requirements and research of my own company [Agile Kinetic](https://www.agilekinetic.com/)
 - For frailty assessment thresholds I relied upon the British Geriatrics Society (BGS) https://www.bgs.org.uk/ 
 - Documentation at https://getbootstrap.com/
-- Documentation at https://Jestjs.io 
+- Documentation and troubleshooting at https://Jestjs.io 
 - Images from [Undraw](https://undraw.co/)
 - Troubleshooting at https://stackoverflow.com/
 - Troubleshooting at https://www.w3.org 
