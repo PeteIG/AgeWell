@@ -14,7 +14,7 @@ Post response submission
 
 ## Responsiveness
 The website was checked using DevTools across various devices and screen sizes.
-docs/all_devices.png
+![All devices](docs/all_devices.png)
 
 ---
 
@@ -54,7 +54,8 @@ docs/all_devices.png
 
 ## Automated Testing
 ### Jest Testing
-Automated tests were conducted using Jest to ensure the correctness of JavaScript functions and user interactions.
+Automated tests were conducted using Jest to ensure the correctness of JavaScript functions and user interactions. All tests passed.
+![Jest Test Results](docs/jest_test_results.png)
 
 #### Input Validation Tests
 - Gait Speed Input Validation: Ensured only valid numerical input is accepted.
@@ -69,22 +70,16 @@ Automated tests were conducted using Jest to ensure the correctness of JavaScrip
 
 ## Validator Testing
 ### HTML
-#### Homepage
-Passing through the official W3C validator.
-Home Page HTML Validator
-
-#### Assessments Page
-Passing through the official W3C validator.
-
-#### Results Page
-Passing through the official W3C validator.
+Passing through the official W3C validator, no issues were found.
+![HTML Validator](docs/w3c_validator.png)
 
 ### CSS
-Passing through the official W3C (Jigsaw) validator.
-CSS Validator
+Passing through the official W3C (Jigsaw) validator, no issues were found.
+![CSS Validator](docs/w3c_jigsaw.png)
 
 ### Javascript
-Passing through JSHint.
+Passing through JSHint, no issues were flagged.
+![JSHint](docs/jshint.png)
 
 ### Lighthouse Report
 Using Lighthouse in DevTools, it was very high performing on all measures

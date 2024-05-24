@@ -14,7 +14,7 @@ LinkedIn: https://www.linkedin.com/in/peter-bishop-ab083546
 
 ---
 
-### Project Goals
+## Project Goals
 The goal of this prototype is to provide a proof of concept for a resource that helps ageing adults self-assess their frailty risk. This tool aims to inform users if a risk is identified. It demonstrates the potential for incorporating such assessments into a broader health monitoring application.
 
 ### User Goals
@@ -31,7 +31,7 @@ The site effectively meets these goals because:
 - It is user-friendly with clear instructions for each assessment
 - The design is responsive and easy to navigate
 
-## User Stories
+### User Stories
 1. As an ageing adult, I want to assess my frailty risk, so that I can take proactive steps to maintain my independence.
 2. As a healthcare professional, I want to understand the frailty risk of my patients quickly, so that I can provide appropriate support and resources.
 3. As a caregiver, I want to know if my loved one is at risk of frailty, so that I can ensure they get the help they need.
@@ -39,9 +39,7 @@ The site effectively meets these goals because:
 ---
 
 ## Features
-### Navbar
-
-#### Navigation
+### Navigation
 
 - Positioned at the top of the page.
 - Contains the site logo on the left side.
@@ -51,7 +49,7 @@ The site effectively meets these goals because:
 ![NavBar at top of page](docs/navbar_logo.png)
 ![NavBar as scrolled down page](docs/navbar_logo_return_top.png)
 
-#### Homepage
+### Homepage
 1. Hero Section which provides:
 - An introduction to the frailty risk assessment tool.
 - Brief instructions on how to use the tool.
@@ -89,7 +87,7 @@ It offers:
 
 ---
 
-### Technologies Utilised
+## Technologies Utilised
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): Served as the fundamental building block for the site's structure.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS): Employed for styling and designing the site's layout.
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): For interactive features and form validations.
@@ -104,9 +102,9 @@ It offers:
 
 ---
 
-### Design
-#### Color Scheme
-##### Colour Palette
+## Design
+### Color Scheme
+#### Colour Palette
 
 The primary colour palette comprises shades that align with the professional and clinical focus of the tool.
 Blue and grey tones are used to create a clean and calming aesthetic, enhancing readability and user experience.
@@ -117,33 +115,43 @@ Blue and grey tones are used to create a clean and calming aesthetic, enhancing 
 
 A modern sans-serif font is used for its clarity and professionalism, ensuring the content is easy to read.
 
-##### Design Rationale
+#### Design Rationale
 - The design is user-centric, ensuring the assessments are easy to navigate and complete.
 - The colour scheme and typography reflect the professional and supportive nature of the tool.
 - The goal is to create a trustworthy and approachable resource for assessing frailty risk.
 
 ---
 
-### Wireframes
+## Wireframes
 Wireframes were created using [Moqups]. Screenshots show the layout for desktop, tablet, and mobile views.
 
-#### Desktop
+### Desktop
 
 ![Home Page. Desktop Screen](docs/agewell_desktop.png)
 
-#### Tablets
+### Tablets
 
 ![Home Page. Tablet Screen](docs/agewell_tablet.png)
 
-#### Mobile devices
+### Mobile devices
 ![Home Page. Mobile Screen](docs/agewell_mobile.png)
+
+---
 
 ## Testing
 
 Please refer to [Testing](TESTING.md) for all testing-related documentation.
 
-## Deployment
+---
 
+## Improvements
+
+- The purpose of separating the age and gender inputs from the Prisma questionnaire is to use these with the Gait Speed and TuG responses for improved stratification. This will be added in the future.
+- The website currently provides a risk result based on the user's responses. The next stage would be to add a recommendation section directing the user to the most appropriate support based on their results.
+
+---
+
+## Deployment
 ### Deployment to GitHub Pages
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
@@ -165,7 +173,7 @@ In your IDE Terminal, type the following command:
 
 ---
 
-### Credits
+## Credits
 In creating this website I relied heavily upon: 
 - The requirements and research of my own company [Agile Kinetic](https://www.agilekinetic.com/)
 - For frailty assessment thresholds I relied upon the British Geriatrics Society (BGS) https://www.bgs.org.uk/ 
@@ -182,7 +190,7 @@ In creating this website I relied heavily upon:
 
 ---
 
-### Acknowledgments
+## Acknowledgments
   
 - [Code Institute](https://codeinstitute.net/) tutors and Slack community members for their support and help
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova): My CI mentor for her advice, encouragement and support
