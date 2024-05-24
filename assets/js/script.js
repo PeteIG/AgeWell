@@ -1,4 +1,6 @@
 /* jshint esversion: 11 */
+/* global $ */
+/* global module */
 
 //Getting the values
 //Global values (initialised)
